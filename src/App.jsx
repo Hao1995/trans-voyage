@@ -6,7 +6,12 @@ function App() {
   const pickRandomStation = () => {
     const randomIndex = Math.floor(Math.random() * trainStations.length);
     const station = trainStations[randomIndex];
-    document.getElementById("selected-station").textContent = station;
+    
+    const stationName = station.StationName.Zh_tw;
+    const stationAddress = station.StationAddress;
+
+    document.getElementById("selected-station").textContent = stationName;
+    document.getElementById("station-address").textContent = stationAddress;
   };
 
   return (
@@ -17,6 +22,7 @@ function App() {
       <div className="card">
         <button onClick={pickRandomStation}>Pick a Random Station</button>
         <p id="selected-station"></p>
+        <p id="station-address"></p>
       </div>
     </>
   )
